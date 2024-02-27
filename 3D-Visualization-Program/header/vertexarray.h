@@ -8,9 +8,9 @@ class VertexArray
 {
 public:
 	VertexArray();
-	VertexArray(VertexBuffer vertex_buffer,
-				IndexBuffer index_buffer,
-				VertexLayout vertex_layout);
+	VertexArray(const VertexBuffer& vertex_buffer,
+				const IndexBuffer& index_buffer,
+				const VertexLayout& vertex_layout);
 	~VertexArray();
 
 private:
