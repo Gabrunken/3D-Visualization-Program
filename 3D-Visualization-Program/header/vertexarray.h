@@ -4,15 +4,23 @@
 #include <vertexlayout.h>
 #include <vertexattribute.h>
 
-class VertexArray
+class VertexArray : OpenGLObject
 {
 public:
 	VertexArray();
-	VertexArray(const VertexBuffer& vertex_buffer,
-				const IndexBuffer& index_buffer,
-				const VertexLayout& vertex_layout);
 	~VertexArray();
+	VertexArray(VertexBuffer vertex_buffer,
+				IndexBuffer index_buffer);
+
+	void create();
+	void free();
+	void bind() const;
+
+	void freeAll();
+
+	IndexBuffer getIndexBuffer() const;
 
 private:
-	unsigned int m_handle = 0;
+	VertexBuffer m_vertex_buffer;
+	IndexBuffer m_index_buffer;
 };

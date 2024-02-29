@@ -140,18 +140,29 @@
     <ClInclude Include="dependencies\glfw\include\glfw3.h" />
     <ClInclude Include="dependencies\glfw\include\glfw3native.h" />
     <ClInclude Include="header\indexbuffer.h" />
+    <ClInclude Include="header\model.h" />
+    <ClInclude Include="header\openglobject.h" />
+    <ClInclude Include="header\gltype.h" />
+    <ClInclude Include="header\render.h" />
+    <ClInclude Include="header\shader.h" />
+    <ClInclude Include="header\shaderprogram.h" />
     <ClInclude Include="header\vertexarray.h" />
     <ClInclude Include="header\vertexattribute.h" />
     <ClInclude Include="header\vertexbuffer.h" />
     <ClInclude Include="header\vertexlayout.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\indexbuffer.cpp" />
+    <ClCompile Include="source\model\shader\shader.cpp" />
+    <ClCompile Include="source\model\model.cpp" />
+    <ClCompile Include="source\model\shader\shaderprogram.cpp" />
+    <ClCompile Include="source\model\vertex\indexbuffer.cpp" />
     <ClCompile Include="source\main.cpp" />
-    <ClCompile Include="source\vertexarray.cpp" />
-    <ClCompile Include="source\vertexattribute.cpp" />
-    <ClCompile Include="source\vertexbuffer.cpp" />
-    <ClCompile Include="source\vertexlayout.cpp" />
+    <ClCompile Include="source\render.cpp" />
+    <ClCompile Include="source\utility\gltype.cpp" />
+    <ClCompile Include="source\model\vertex\vertexarray.cpp" />
+    <ClCompile Include="source\model\vertex\vertexattribute.cpp" />
+    <ClCompile Include="source\model\vertex\vertexbuffer.cpp" />
+    <ClCompile Include="source\model\vertex\vertexlayout.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

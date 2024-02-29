@@ -16,23 +16,32 @@
     <Filter Include="Header Files\dependencies">
       <UniqueIdentifier>{a9eaa0b2-5865-40ab-ab27-9a530ba5c711}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\utilities">
+      <UniqueIdentifier>{a9ee6745-8753-4b9c-a249-a68508e93cb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utilities">
+      <UniqueIdentifier>{4d07604a-632e-4b16-9b97-1999d4cf9739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model">
+      <UniqueIdentifier>{b66e4b59-72b2-49a2-ba5d-64ed3ff99f5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model\vertex">
+      <UniqueIdentifier>{3939122e-7283-4559-9a8b-329c13815e16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model">
+      <UniqueIdentifier>{31566b73-72d1-44bd-8dea-15beed3bc0c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\vertex">
+      <UniqueIdentifier>{1bc98dfa-e56e-4f61-a2e3-cc4e6bf74d16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model\shader">
+      <UniqueIdentifier>{68ac56d9-de79-4e99-a3c7-e847f04434bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model\shader">
+      <UniqueIdentifier>{6b72b555-499a-4410-b1d1-ceff89482829}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\indexbuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="header\vertexarray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="header\vertexattribute.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="header\vertexbuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="header\vertexlayout.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="dependencies\glew\include\eglew.h">
       <Filter>Header Files\dependencies</Filter>
     </ClInclude>
@@ -51,24 +60,72 @@
     <ClInclude Include="dependencies\glew\include\wglew.h">
       <Filter>Header Files\dependencies</Filter>
     </ClInclude>
+    <ClInclude Include="header\render.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\gltype.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="header\model.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="header\indexbuffer.h">
+      <Filter>Header Files\model\vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="header\vertexarray.h">
+      <Filter>Header Files\model\vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="header\vertexattribute.h">
+      <Filter>Header Files\model\vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="header\vertexbuffer.h">
+      <Filter>Header Files\model\vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="header\vertexlayout.h">
+      <Filter>Header Files\model\vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="header\openglobject.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="header\shader.h">
+      <Filter>Header Files\model\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="header\shaderprogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\indexbuffer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\vertexarray.cpp">
+    <ClCompile Include="source\render.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\vertexattribute.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="source\utility\gltype.cpp">
+      <Filter>Source Files\utilities</Filter>
     </ClCompile>
-    <ClCompile Include="source\vertexbuffer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="source\model\vertex\indexbuffer.cpp">
+      <Filter>Source Files\model\vertex</Filter>
     </ClCompile>
-    <ClCompile Include="source\vertexlayout.cpp">
+    <ClCompile Include="source\model\vertex\vertexarray.cpp">
+      <Filter>Source Files\model\vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\vertex\vertexattribute.cpp">
+      <Filter>Source Files\model\vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\vertex\vertexbuffer.cpp">
+      <Filter>Source Files\model\vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\vertex\vertexlayout.cpp">
+      <Filter>Source Files\model\vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\model.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\shader\shader.cpp">
+      <Filter>Source Files\model\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\shader\shaderprogram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
