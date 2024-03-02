@@ -1,5 +1,5 @@
 #include <vertexarray.h>
-#include <glew.h>
+#include <iostream>
 
 VertexArray::VertexArray()
 {}
@@ -15,6 +15,9 @@ VertexArray::VertexArray(VertexBuffer vertex_buffer,
 
 void VertexArray::create()
 {
+	if (m_handle != 0)
+		return;
+
 	glGenVertexArrays(1, &m_handle);
 	glBindVertexArray(m_handle);
 
@@ -23,7 +26,7 @@ void VertexArray::create()
 
 	one_byte_int offset = 0;
 	VertexLayout vertex_layout = m_vertex_buffer.getVertexLayout();
-	for (unsigned int attribute = 0; attribute < 1; attribute++)
+	for (unsigned int attribute = 0; attribute < vertex_layout.attributes_count; attribute++)
 	{
 		glEnableVertexAttribArray(attribute);
 		glVertexAttribPointer(attribute,
@@ -33,7 +36,7 @@ void VertexArray::create()
 							  vertex_layout.bytesCount(),
 							  (const void*)offset);
 
-		offset += vertex_layout.bytesCount();
+		offset += vertex_layout.vertex_attributes[attribute].bytesCount();
 	}
 }
 
@@ -50,6 +53,7 @@ void VertexArray::bind() const
 
 void VertexArray::freeAll()
 {
+	std::cout << "free";
 	glDeleteVertexArrays(1, &m_handle);
 	m_handle = 0;
 	m_vertex_buffer.free();

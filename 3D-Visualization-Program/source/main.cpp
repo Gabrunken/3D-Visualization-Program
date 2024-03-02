@@ -1,5 +1,7 @@
 #include <iostream>
 #include <render.h>
+#include <shaderprogram.h>
+#include <texture.h>
 #include <glfw3.h>
 
 const GLFWwindow* init()
@@ -23,6 +25,8 @@ const GLFWwindow* init()
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glEnable(GL_DEPTH_TEST);
 
+	stbi_set_flip_vertically_on_load(true);
+
 	return window;
 }
 
@@ -43,8 +47,23 @@ void mainLoop(const GLFWwindow* window)
 	VertexAttribute vas[] = {VertexAttribute(2, GL_FLOAT), VertexAttribute(2, GL_FLOAT)};
 	VertexBuffer vbo = VertexBuffer(VertexBuffer(VertexBuffer((const void*)vertices, 4, VertexLayout(vas, 2))));
 	IndexBuffer ibo(indices, 6);
-	Model quad("quad", VertexArray(vbo, ibo));
-	quad.vertex_array.create();
+
+	ShaderProgram textured(Shader::loadShaderFromFile("resources/graphics/shaders/vertex/textured.vertexshader"),
+					       Shader::loadShaderFromFile("resources/graphics/shaders/fragment/textured.fragmentshader"));
+	
+	Texture bricks("resources/graphics/textures/bricks.jpg");
+	Texture woodplanks("resources/graphics/textures/woodplanks.jpeg");
+	Material quad_material(textured);
+	Material blue_tinted(textured);
+	
+	Model quad("quad", VertexArray(vbo, ibo), quad_material);
+	quad.create();
+	quad.material.setParameter3<GLfloat>("tint", 1.0f, 0.0f, 1.0f);
+	quad.material.setTexture("u_texture", woodplanks);
+	quad.material = blue_tinted;
+	quad.material.setTexture("u_texture", bricks);
+	quad.material.setParameter3<GLfloat>("tint", 0.0f, 0.0f, 1.0f);
+	quad.material = quad_material;
 
 	while (!glfwWindowShouldClose((GLFWwindow*)window))
 	{
@@ -64,6 +83,7 @@ int main()
 	if (window == nullptr)
 	{
 		std::cout << "Failed to init." << std::endl;
+		return -1;
 	}
 
 	mainLoop(window);

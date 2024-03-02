@@ -22,6 +22,9 @@ VertexLayout VertexBuffer::getVertexLayout() const
 
 void VertexBuffer::create()
 {
+	if (m_handle != 0)
+		return;
+
 	glGenBuffers(1, &m_handle);
 	glBindBuffer(GL_ARRAY_BUFFER, m_handle);
 	glBufferData(GL_ARRAY_BUFFER, m_vertices_count * m_vertex_layout.bytesCount(), m_vertices_data, GL_STATIC_DRAW);

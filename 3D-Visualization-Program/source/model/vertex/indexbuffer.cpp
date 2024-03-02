@@ -13,6 +13,9 @@ IndexBuffer::IndexBuffer(const unsigned int* indices, unsigned int indices_count
 
 void IndexBuffer::create()
 {
+	if (m_handle != 0)
+		return;
+
 	glGenBuffers(1, &m_handle);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_handle);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indices_count * sizeof(unsigned int), m_indices, GL_STATIC_DRAW);

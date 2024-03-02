@@ -7,9 +7,9 @@ void render::clear()
 
 void render::model(Model model)
 {
-	model.vertex_array.bind();
+	model.bind();
 	glDrawElements(GL_TRIANGLES,
-				   model.vertex_array.getIndexBuffer().getIndicesCount(),
+				   model.getVertexArray().getIndexBuffer().getIndicesCount(),
 				   GL_UNSIGNED_INT,
 				   nullptr);
 }

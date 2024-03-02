@@ -40,6 +40,9 @@
     <Filter Include="Header Files\model\shader">
       <UniqueIdentifier>{6b72b555-499a-4410-b1d1-ceff89482829}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\dependencies">
+      <UniqueIdentifier>{c3985daa-7eda-4068-b84f-7d242c323528}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dependencies\glew\include\eglew.h">
@@ -91,6 +94,15 @@
       <Filter>Header Files\model\shader</Filter>
     </ClInclude>
     <ClInclude Include="header\shaderprogram.h">
+      <Filter>Header Files\model\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="header\texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\stb_image\stb_image.h">
+      <Filter>Header Files\dependencies</Filter>
+    </ClInclude>
+    <ClInclude Include="header\material.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -126,6 +138,15 @@
       <Filter>Source Files\model\shader</Filter>
     </ClCompile>
     <ClCompile Include="source\model\shader\shaderprogram.cpp">
+      <Filter>Source Files\model\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="source\texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\stb_image\stb_image.cpp">
+      <Filter>Source Files\dependencies</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\material.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

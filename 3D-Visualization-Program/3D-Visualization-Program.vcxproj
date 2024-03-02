@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\3D-Visualization-Program\header;$(SolutionDir)\3D-Visualization-Program\dependencies\glew\include;$(SolutionDir)\3D-Visualization-Program\dependencies\glfw\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)3D-Visualization-Program\dependencies\stb_image;$(SolutionDir)3D-Visualization-Program\header;$(SolutionDir)\3D-Visualization-Program\dependencies\glew\include;$(SolutionDir)\3D-Visualization-Program\dependencies\glfw\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\3D-Visualization-Program\header;$(SolutionDir)\3D-Visualization-Program\dependencies\glew\include;$(SolutionDir)\3D-Visualization-Program\dependencies\glfw\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)3D-Visualization-Program\dependencies\stb_image;$(SolutionDir)3D-Visualization-Program\header;$(SolutionDir)\3D-Visualization-Program\dependencies\glew\include;$(SolutionDir)\3D-Visualization-Program\dependencies\glfw\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,25 +139,31 @@
     <ClInclude Include="dependencies\glew\include\wglew.h" />
     <ClInclude Include="dependencies\glfw\include\glfw3.h" />
     <ClInclude Include="dependencies\glfw\include\glfw3native.h" />
+    <ClInclude Include="dependencies\stb_image\stb_image.h" />
     <ClInclude Include="header\indexbuffer.h" />
+    <ClInclude Include="header\material.h" />
     <ClInclude Include="header\model.h" />
     <ClInclude Include="header\openglobject.h" />
     <ClInclude Include="header\gltype.h" />
     <ClInclude Include="header\render.h" />
     <ClInclude Include="header\shader.h" />
     <ClInclude Include="header\shaderprogram.h" />
+    <ClInclude Include="header\texture.h" />
     <ClInclude Include="header\vertexarray.h" />
     <ClInclude Include="header\vertexattribute.h" />
     <ClInclude Include="header\vertexbuffer.h" />
     <ClInclude Include="header\vertexlayout.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="dependencies\stb_image\stb_image.cpp" />
+    <ClCompile Include="source\model\material.cpp" />
     <ClCompile Include="source\model\shader\shader.cpp" />
     <ClCompile Include="source\model\model.cpp" />
     <ClCompile Include="source\model\shader\shaderprogram.cpp" />
     <ClCompile Include="source\model\vertex\indexbuffer.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\render.cpp" />
+    <ClCompile Include="source\texture.cpp" />
     <ClCompile Include="source\utility\gltype.cpp" />
     <ClCompile Include="source\model\vertex\vertexarray.cpp" />
     <ClCompile Include="source\model\vertex\vertexattribute.cpp" />

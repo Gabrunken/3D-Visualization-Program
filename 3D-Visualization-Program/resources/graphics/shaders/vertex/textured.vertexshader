@@ -1,0 +1,13 @@
+#version 330 core
+
+in vec4 vertex_position;
+in vec2 tex_coord;
+
+out vec2 p_tex_coord;
+
+void main()
+{
+	gl_Position = vertex_position;
+
+	p_tex_coord = tex_coord;
+}
