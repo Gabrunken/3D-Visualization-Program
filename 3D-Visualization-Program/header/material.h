@@ -27,7 +27,6 @@ public:
 
 	ShaderProgram getShaderProgram() const;
 
-
 private:
 	ShaderProgram m_shader_program;
 
@@ -36,6 +35,7 @@ private:
 	std::vector<uint8_t> m_parameters_length;
 	std::vector<GLenum> m_parameters_types;
 	std::vector<const char*> m_parameters_names;
+	std::vector<Texture> m_texture_parameters;
 
 	uint8_t m_texture_slot = 0;
 };

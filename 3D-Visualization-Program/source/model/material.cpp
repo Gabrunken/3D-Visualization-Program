@@ -177,7 +177,14 @@ void Material::setTexture(const char* name, Texture texture)
 {
 	texture.create();
 	if (m_shader_program.setUniformTexture(name, texture, m_texture_slot))
+	{
 		m_texture_slot++;
+
+		m_parameters_names.push_back(name);
+		m_parameters_length.push_back(1);
+		m_parameters_types.push_back(GL_TEXTURE_2D);
+		m_texture_parameters.push_back(texture);
+	}
 }
 
 void Material::free()
@@ -191,6 +198,11 @@ void Material::free()
 
 void Material::bind() const
 {
+	//i have to rethink this system
+	for (uint8_t i = 0; i < m_uint_parameters.size() / ; i++)
+
+	uint8_t texture_slot = 0;
+
 	for (uint8_t i = 0; i < m_parameters_names.size(); i++)
 	{
 		switch (m_parameters_types[i])
@@ -240,6 +252,9 @@ void Material::bind() const
 																  m_uint_parameters[(2 * i) + 3]);
 				break;
 			}
+
+		case GL_TEXTURE_2D:
+			m_shader_program.setUniformTexture(m_parameters_names[i], m_texture_parameters[], tex)
 		}
 	}
 }

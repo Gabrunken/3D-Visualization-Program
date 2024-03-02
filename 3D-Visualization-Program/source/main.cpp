@@ -55,14 +55,14 @@ void mainLoop(const GLFWwindow* window)
 	Texture woodplanks("resources/graphics/textures/woodplanks.jpeg");
 	Material quad_material(textured);
 	Material blue_tinted(textured);
+	quad_material.setTexture("u_texture", woodplanks);
+	quad_material.setParameter3<GLfloat>("tint", 1.0f, 0.0f, 1.0f);
+	blue_tinted.setTexture("u_texture", bricks);
+	blue_tinted.setParameter3<GLfloat>("tint", 0.0f, 0.0f, 1.0f);
 	
 	Model quad("quad", VertexArray(vbo, ibo), quad_material);
 	quad.create();
-	quad.material.setParameter3<GLfloat>("tint", 1.0f, 0.0f, 1.0f);
-	quad.material.setTexture("u_texture", woodplanks);
 	quad.material = blue_tinted;
-	quad.material.setTexture("u_texture", bricks);
-	quad.material.setParameter3<GLfloat>("tint", 0.0f, 0.0f, 1.0f);
 	quad.material = quad_material;
 
 	while (!glfwWindowShouldClose((GLFWwindow*)window))
